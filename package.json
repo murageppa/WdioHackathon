@@ -1,0 +1,25 @@
+{
+  "name": "auto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wdio": "wdio run ./wdio.conf.js",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "AST-LW",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^8.24.16"
+  },
+  "devDependencies": {
+    "@wdio/local-runner": "^8.24.12",
+    "@wdio/mocha-framework": "^8.24.12",
+    "@wdio/spec-reporter": "^8.24.12",
+    "eslint": "^8.55.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "eslint-plugin-wdio": "^8.24.12"
+  }
+}
