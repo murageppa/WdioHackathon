@@ -3,13 +3,13 @@ const { execSync } = require('child_process');
 // Checkout new branch
 const newBranch = 'feature-branch';
 const baseBranch = 'main';
-checkoutNewBranch(newBranch, baseBranch);
+// checkoutNewBranch(newBranch, baseBranch);
 
-const commitMessage = 'Your commit message';
-// commitChanges(commitMessage);
+const commitMessage = 'added octokit package for git create and merge PR';
+commitChanges(commitMessage);
 
 const branchToPush = newBranch;
-pushChangesToRemote(branchToPush);
+// pushChangesToRemote(branchToPush);
 
 
 // Function to checkout to a new branch

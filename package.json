@@ -12,6 +12,7 @@
   "author": "AST-LW",
   "license": "ISC",
   "dependencies": {
+    "@octokit/rest": "^20.0.2",
     "@wdio/cli": "^8.24.16"
   },
   "devDependencies": {
