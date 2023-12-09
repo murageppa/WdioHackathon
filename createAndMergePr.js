@@ -1,10 +1,13 @@
 const { Octokit } = require('@octokit/rest');
 
+// Replace 'YOUR_ACCESS_TOKEN' with your GitHub personal access token
+const accessToken = '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';
+
 // Function to create a pull request
 async function createPullRequest(owner, repo, title, head, base) {
   try {
     const octokit = new Octokit({
-      auth: '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', // Replace with your GitHub personal access token
+      auth: accessToken,
     });
 
     const response = await octokit.pulls.create({
@@ -27,7 +30,7 @@ async function createPullRequest(owner, repo, title, head, base) {
 async function mergePullRequest(owner, repo, pullRequestNumber) {
   try {
     const octokit = new Octokit({
-      auth: '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', // Replace with your GitHub personal access token
+      auth: accessToken,
     });
 
     await octokit.pulls.merge({
@@ -47,12 +50,16 @@ async function mergePullRequest(owner, repo, pullRequestNumber) {
 async function run() {
   const owner = 'murageppa';
   const repo = 'WdioHackathon';
-  const title = 'git changes added';
-  const head = 'gitChanges';
+  const title = 'git changes added and raising PR';
+  const head = 'feature-branch';
   const base = 'main';
 
-  const pullRequestNumber = await createPullRequest(owner, repo, title, head, base);
-  await mergePullRequest(owner, repo, pullRequestNumber);
+  try {
+    const pullRequestNumber = await createPullRequest(owner, repo, title, head, base);
+    await mergePullRequest(owner, repo, pullRequestNumber);
+  } catch (error) {
+    console.error('Error during execution:', error.message);
+  }
 }
 
 // Call the run function
